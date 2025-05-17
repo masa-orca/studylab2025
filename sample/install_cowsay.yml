@@ -1,0 +1,14 @@
+- name: Install cowsay commmands
+  hosts: localhost
+  tasks:
+    - name: Task 1 - Put lines.txt file
+      ansible.builtin.copy:
+        src: lines.txt
+        dest: lines.txt
+        mode: '0644'
+
+    - name: Task 2 - Install cowsay command
+      become: true
+      ansible.builtin.package:
+        name: cowsay
+        state: present

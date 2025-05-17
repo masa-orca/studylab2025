@@ -1,0 +1,9 @@
+---
+- name: Install sl commmand
+  hosts: localhost
+  tasks:
+    - name: Install sl ommand
+      become: true
+      ansible.builtin.package:
+        name: sl
+        state: present

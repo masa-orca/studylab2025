@@ -1,0 +1,10 @@
+---
+- name: Put hello_world.txt to remote server
+  hosts: paizacloud_servers
+  tasks:
+    - ansible.builtin.copy:
+        src: hello_world.txt
+        dest: hello_world.txt
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'
